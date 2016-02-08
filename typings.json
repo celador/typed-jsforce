@@ -1,4 +1,7 @@
 {
   "name": "jsforce",
-  "main": "jsforce.d.ts"
+  "main": "jsforce.d.ts",
+  "ambientDependencies": {
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#aee0039a2d6686ec78352125010ebb38a7a7d743"
+  }
 }

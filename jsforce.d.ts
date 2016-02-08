@@ -1,17 +1,31 @@
-declare function jsforce (namespace: string): jsforce.Debugger;
+// Type definitions for jsforce v1.5.1
+// Project: https://github.com/jsforce/jsforce
+// Definitions by: JohnAaronNelson <https://github.com/celador>
+/// <reference path="./typings/main/ambient/node/node.d.ts" />
 
-declare module jsforce {
-  export interface Debugger {
-    (message: any, ...args: any[]): void;
-    enabled: boolean;
-    namespace: string;
-  }
+declare module 'jsforce' {
+    namespace jsforce {
 
-  export function coerce (value: any): any;
-  export function disable (): void;
-  export function enable (namespaces: string): void;
-  export function enabled (namespace: string): boolean;
-  export var humanize: typeof ms;
+        interface jsforce extends NodeJS.EventEmitter {
+
+        }
+
+        interface Connection {
+            tooling: any;
+            request: any;
+            query: any;
+            login(name: string, password: string): any;
+        }
+
+        interface UserInfo {
+            id: string; // User ID
+            organizationId: string; // Organization ID
+            url: string; // Identity URL of the user
+        }
+
+    }
+
+    var jsforce: jsforce.jsforce;
+
+    export = jsforce;
 }
-
-export = jsforce;
